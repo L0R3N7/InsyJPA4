@@ -1,3 +1,3 @@
 # Ideas
-- Survalience System China / Karma Score
+- Surveillance System China / social credit
 - Supermarket
