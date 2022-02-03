@@ -50,3 +50,11 @@ insert into "GraphicsCard" (tdp, vram, vramtype, baseclock, boostclock, serialnu
 
 insert into "Customer" (id, firstname, lastname)
     values (1, 'John', 'Doo');
+
+insert into "PC" (id, type, price, warrantyend, shouldbebuilt, manufacturer, model, customer_id)
+    values (1, 'PrebuiltPC', 500, null, null, 'ASUS', '7TZ8-UI89-ZTWR', 1),
+           (2, 'ConfiguredPC', 3000, null, false, null, null, 1);
+
+insert into "PCPart" (amount, part_serialnumber, "configuredPC_id")
+    values (2, '80IU-91Z2', 2),
+           (1, '10V8-953A', 2);

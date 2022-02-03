@@ -3,6 +3,7 @@ package at.hlt.workload.pc;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Data
