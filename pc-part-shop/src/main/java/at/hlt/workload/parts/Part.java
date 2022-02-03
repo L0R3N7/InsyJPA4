@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 @Table(name = "\"Part\"")
 public abstract class Part {
     @Id
+    @Column(name = "serialnumber")
     String serialNumber;
     String name;
     BigDecimal price;

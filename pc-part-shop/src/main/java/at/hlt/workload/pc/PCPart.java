@@ -7,4 +7,5 @@ import javax.persistence.Entity;
 public class PCPart {
     @EmbeddedId
     PCPartId id;
+    Long amount;
 }

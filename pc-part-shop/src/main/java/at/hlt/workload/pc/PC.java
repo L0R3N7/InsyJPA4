@@ -1,5 +1,6 @@
 package at.hlt.workload.pc;
 
+import at.hlt.workload.customer.Customer;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,7 +15,8 @@ public abstract class PC {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Long customerId;
+    @ManyToOne
+    Customer customer;
     BigDecimal price;
     LocalDate warrantyEnd;
 }
