@@ -21,7 +21,7 @@ insert into "PSU" (power, rating, serialnumber)
     values (750, '80 PLUS', 'UOI8-999A'),
            (850, '80 PLUS', 'UOI8-999B');
 
-insert into "RAM" (clock, count, memory, type, serialnumber)
+insert into "RAM" (clock, count, memory, ddr, serialnumber)
     values (3200, 2, 16, 'DDR4', 'IZTE-8513'),
            (1600, 2, 8, 'DDR3', 'ZU26-Z7Z7');
 
@@ -48,12 +48,12 @@ insert into "GraphicsCard" (tdp, vram, vramtype, baseclock, boostclock, serialnu
     values (170, 12, 'GDDR6', 1320, 1837, '80IU-91Z2'),
            (350, 12, 'GDDR6X', 1365, 1845, 'RT9F-87AS');
 
-insert into "Customer" (id, firstname, lastname)
-    values (1, 'John', 'Doo');
+insert into "Customer" (firstname, lastname)
+    values ('John', 'Doe');
 
-insert into "PC" (id, type, price, warrantyend, shouldbebuilt, manufacturer, model, customer_id)
-    values (1, 'PrebuiltPC', 500, null, null, 'ASUS', '7TZ8-UI89-ZTWR', 1),
-           (2, 'ConfiguredPC', 3000, null, false, null, null, 1);
+insert into "PC" (type, price, warrantyend, shouldbebuilt, manufacturer, model, customer_id)
+    values ('PrebuiltPC', 500, null, null, 'ASUS', '7TZ8-UI89-ZTWR', null),
+           ('ConfiguredPC', 3000, null, false, null, null, 1);
 
 insert into "PCPart" (amount, part_serialnumber, "configuredPC_id")
     values (2, '80IU-91Z2', 2),
