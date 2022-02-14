@@ -20,6 +20,10 @@ public abstract class Part {
     public Part() {
     }
 
+    public Part getPart(){
+        return this;
+    }
+
     public String getSerialNumber() {
         return serialNumber;
     }

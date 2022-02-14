@@ -4,6 +4,8 @@ import at.htl.model.ConfiguredPCDTO;
 import at.htl.model.CustomerDTO;
 import at.htl.model.PrebuiltPCDTO;
 import at.htl.workload.customer.Customer;
+import at.htl.workload.parts.Part;
+import at.htl.workload.parts.PartDto;
 import at.htl.workload.pc.ConfiguredPC;
 import at.htl.workload.pc.PrebuiltPC;
 import org.mapstruct.Mapper;
@@ -18,4 +20,5 @@ public interface GlobalMapper {
     CustomerDTO customerToCustomerDTO(Customer c);
     List<PrebuiltPCDTO> listPrebuiltPCToDTO(List<PrebuiltPC> l);
     ConfiguredPCDTO configuredPCToDTO(ConfiguredPC c);
+    List<PartDto> listPartToDto(List<Part> l);
 }

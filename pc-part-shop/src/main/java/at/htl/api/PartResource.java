@@ -1,6 +1,6 @@
 package at.htl.api;
 
-import at.htl.workload.parts.Part;
+import at.htl.workload.parts.PartDto;
 import at.htl.workload.parts.logic.PartService;
 
 import javax.ws.rs.Consumes;
@@ -9,6 +9,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 import java.util.Map;
 
 @Produces(MediaType.APPLICATION_JSON)
@@ -23,6 +24,7 @@ public class PartResource {
 
     @GET
     public Response getAll(){
-        Map<String, Part> result = partService.getAll();
+        Map<String, List<PartDto>> result = partService.getAll();
+        return Response.ok(result).build();
     }
 }
