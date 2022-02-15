@@ -9,7 +9,7 @@ import {PartListComponent} from "./components/part-list/part-list.component";
 
 const routes: Routes = [
   {
-    path:'',
+    path: '',
     pathMatch: 'full',
     redirectTo: 'home'
   },
@@ -37,7 +37,7 @@ const routes: Routes = [
     path: 'part-list',
     component: PartListComponent
   }
-  ];
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

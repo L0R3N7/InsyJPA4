@@ -1,1 +1,15 @@
 <p>part-list works!</p>
+
+<button  (click)="this.getPartList()">Get song </button>
+
+<li *ngFor="let category of this.itemList | keyvalue">
+  {{ category.key }}
+</li>
+
+<ul>
+  <li *ngFor="let recipient of this.itemList | keyvalue">
+    {{recipient.key}} --> {{recipient.value}}
+  </li>
+</ul>
+
+
