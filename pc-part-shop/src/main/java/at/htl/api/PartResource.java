@@ -1,12 +1,11 @@
 package at.htl.api;
 
-import at.htl.workload.parts.PartDto;
+import at.htl.mapper.GlobalMapper;
+import at.htl.workload.parts.*;
+import at.htl.model.PartDTO;
 import at.htl.workload.parts.logic.PartService;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
@@ -24,7 +23,38 @@ public class PartResource {
 
     @GET
     public Response getAll(){
-        Map<String, List<PartDto>> result = partService.getAll();
+        Map<String, List<PartDTO>> result = partService.getAll();
         return Response.ok(result).build();
+    }
+
+    @GET
+    @Path("{serialNumber}")
+    public Response getDetails(@PathParam("serialNumber") String serialNumber) {
+        var res = partService.getById(serialNumber);
+        if (res == null) {
+            return Response.status(404).build();
+        }
+        if (res instanceof Case) {
+            return Response.ok(GlobalMapper.INSTANCE.caseToDTO((Case) res)).build();
+        }
+        if (res instanceof CPU) {
+            return Response.ok(GlobalMapper.INSTANCE.cpuToDTO((CPU) res)).build();
+        }
+        if (res instanceof GraphicsCard) {
+            return Response.ok(GlobalMapper.INSTANCE.graphicsCardToDTO((GraphicsCard) res)).build();
+        }
+        if (res instanceof Motherboard) {
+            return Response.ok(GlobalMapper.INSTANCE.motherboardToDTO((Motherboard) res)).build();
+        }
+        if (res instanceof PSU) {
+            return Response.ok(GlobalMapper.INSTANCE.psuToDTO((PSU) res)).build();
+        }
+        if (res instanceof RAM) {
+            return Response.ok(GlobalMapper.INSTANCE.ramToDTO((RAM) res)).build();
+        }
+        if (res instanceof Storage) {
+            return Response.ok(GlobalMapper.INSTANCE.storageToDTO((Storage) res)).build();
+        }
+        return Response.status(500).build();
     }
 }

@@ -1,21 +1,16 @@
-package at.htl.workload.parts;
+package at.htl.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class PartDto implements Serializable {
+public class PartDTO implements Serializable {
     private String serialNumber;
     private String name;
     private BigDecimal price;
     private String type;
 
-    public PartDto(String serialNumber, String name, BigDecimal price, String type) {
-        this.serialNumber = serialNumber;
-        this.name = name;
-        this.price = price;
-        this.type = type;
-    }
+    public PartDTO() {}
 
     public void setSerialNumber(String serialNumber) {
         this.serialNumber = serialNumber;
@@ -53,7 +48,7 @@ public class PartDto implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PartDto entity = (PartDto) o;
+        PartDTO entity = (PartDTO) o;
         return Objects.equals(this.serialNumber, entity.serialNumber) &&
                 Objects.equals(this.name, entity.name) &&
                 Objects.equals(this.price, entity.price) &&

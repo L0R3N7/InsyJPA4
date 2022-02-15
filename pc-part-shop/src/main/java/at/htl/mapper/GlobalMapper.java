@@ -1,11 +1,8 @@
 package at.htl.mapper;
 
-import at.htl.model.ConfiguredPCDTO;
-import at.htl.model.CustomerDTO;
-import at.htl.model.PrebuiltPCDTO;
+import at.htl.model.*;
 import at.htl.workload.customer.Customer;
-import at.htl.workload.parts.Part;
-import at.htl.workload.parts.PartDto;
+import at.htl.workload.parts.*;
 import at.htl.workload.pc.ConfiguredPC;
 import at.htl.workload.pc.PrebuiltPC;
 import org.mapstruct.Mapper;
@@ -20,5 +17,12 @@ public interface GlobalMapper {
     CustomerDTO customerToCustomerDTO(Customer c);
     List<PrebuiltPCDTO> listPrebuiltPCToDTO(List<PrebuiltPC> l);
     ConfiguredPCDTO configuredPCToDTO(ConfiguredPC c);
-    List<PartDto> listPartToDto(List<Part> l);
+    List<PartDTO> listPartToDto(List<Part> l);
+    GraphicsCardDTO graphicsCardToDTO(GraphicsCard g);
+    CaseDTO caseToDTO(Case c);
+    CPUDTO cpuToDTO(CPU c);
+    MotherboardDTO motherboardToDTO(Motherboard m);
+    PSUDTO psuToDTO(PSU p);
+    RAMDTO ramToDTO(RAM res);
+    StorageDTO storageToDTO(Storage res);
 }
