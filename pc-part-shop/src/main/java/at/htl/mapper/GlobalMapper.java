@@ -15,6 +15,7 @@ public interface GlobalMapper {
     GlobalMapper INSTANCE = Mappers.getMapper(GlobalMapper.class);
 
     CustomerDTO customerToCustomerDTO(Customer c);
+    List<CustomerDTO> listCustomerToDTO(List<Customer> l);
     List<PrebuiltPCDTO> listPrebuiltPCToDTO(List<PrebuiltPC> l);
     ConfiguredPCDTO configuredPCToDTO(ConfiguredPC c);
     List<PartDTO> listPartToDto(List<Part> l);
