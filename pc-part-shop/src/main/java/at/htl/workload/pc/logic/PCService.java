@@ -10,4 +10,6 @@ public interface PCService {
     List<PrebuiltPC> getAllPrebuilt();
 
     ConfiguredPC configurePC(NewPCDTO dto);
+
+    List<ConfiguredPC> getAllConfigured();
 }

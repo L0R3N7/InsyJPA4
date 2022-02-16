@@ -8,6 +8,7 @@ import at.htl.workload.customer.logic.CustomerService;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -34,5 +35,19 @@ public class CustomerResource {
     ){
         boolean success = customerService.addPcToCustomer(customerId, pcId);
         return (success ? Response.ok() : Response.status(404)).build();
+    }
+
+    @GET
+    @Path("all")
+    public Response getAllCustomer(){
+        List<Customer> result = this.customerService.getAllCustomer();
+        return ((result == null)? Response.status(404) : Response.ok(GlobalMapper.INSTANCE.listCustomerToDTO(result))).build();
+    }
+
+    @GET
+    @Path("{id}")
+    public Response getCusomterById(@PathParam("id") Long id){
+        Customer result = this.customerService.getCustomerById(id);
+        return ((result == null)? Response.status(404) : Response.ok(GlobalMapper.INSTANCE.customerToCustomerDTO(result))).build();
     }
 }

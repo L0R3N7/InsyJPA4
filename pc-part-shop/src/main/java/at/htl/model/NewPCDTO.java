@@ -3,18 +3,18 @@ package at.htl.model;
 import java.util.List;
 
 public class NewPCDTO {
-    List<String> partIds;
+    List<String> partSerialnumbers;
     boolean shouldBeBuilt;
 
     public NewPCDTO() {
     }
 
-    public List<String> getPartIds() {
-        return partIds;
+    public List<String> getPartSerialnumbers() {
+        return partSerialnumbers;
     }
 
-    public void setPartIds(List<String> partIds) {
-        this.partIds = partIds;
+    public void setPartSerialnumbers(List<String> partSerialnumbers) {
+        this.partSerialnumbers = partSerialnumbers;
     }
 
     public boolean isShouldBeBuilt() {
