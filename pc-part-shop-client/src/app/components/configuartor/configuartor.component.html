@@ -1,1 +1,35 @@
 <p>configuartor works!</p>
+
+<button (click)="this.getPartList()">Get Parts</button>
+
+
+<ul *ngIf="this.itemList != null ">
+  <div *ngFor="let part of this.itemList | keyvalue">
+    <fieldset>
+      {{part.key}}
+      <form>
+        <ul *ngIf="part.value">
+          <li *ngFor="let article of part.value">
+
+            <input (click)="this.onclickedTsheckBox(part.key)" type="radio" id="price" name="price" value="Price">
+
+            {{article["name"]}}
+            ({{article["serialNumber"]}})
+            : {{article["price"]}}€
+          </li>
+        </ul>
+      </form>
+    </fieldset>
+
+  </div>
+</ul>
+
+
+
+
+
+
+
+
+
+

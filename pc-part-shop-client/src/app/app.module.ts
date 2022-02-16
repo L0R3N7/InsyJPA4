@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {HttpClientModule} from '@angular/common/http';
-
+import { MatSliderModule } from '@angular/material/slider';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HomeComponent} from './components/home/home.component';
@@ -11,6 +11,7 @@ import {ConfiguartorComponent} from './components/configuartor/configuartor.comp
 import {PartDetailsComponent} from './components/part-details/part-details.component';
 import {PartListComponent} from './components/part-list/part-list.component';
 import {OrdersComponent} from './components/orders/orders.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,10 @@ import {OrdersComponent} from './components/orders/orders.component';
   ],
   imports: [
     BrowserModule,
+    MatSliderModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

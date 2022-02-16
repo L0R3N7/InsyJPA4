@@ -1,6 +1,7 @@
 <p>part-list works!</p>
 
-<button (click)="this.getPartList()">Get MrVTE</button>
+<button (click)="this.getPartList()">Get Partlist</button>
+
 
 
 <ul *ngIf="this.itemList != null ">
@@ -12,12 +13,16 @@
       <li *ngFor="let article of part.value">
         {{article["price"]}} €
         {{article["name"]}}
+
+        {{article["serialNumber"]}}
       </li>
     </ul>
   </li>
-
 </ul>
 
 
 
 
+
+
+<mat-slider min="1" max="100" step="1" value="50"></mat-slider>

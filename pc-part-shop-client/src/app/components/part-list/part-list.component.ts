@@ -17,6 +17,9 @@ export class PartListComponent implements OnInit {
   ngOnInit(): void {
     // this.getPartList()
   }
+  onclickedTsheckBox() {
+    console.log()
+  }
 
   getPartList() {
 
@@ -28,4 +31,6 @@ export class PartListComponent implements OnInit {
 
     //return this.itemList;
   }
+
+
 }
