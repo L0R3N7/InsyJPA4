@@ -35,4 +35,6 @@ public class CustomerResource {
         boolean success = customerService.addPcToCustomer(customerId, pcId);
         return (success ? Response.ok() : Response.status(404)).build();
     }
+
+
 }

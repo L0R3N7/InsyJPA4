@@ -41,9 +41,10 @@ public class PCServiceImpl implements PCService {
         List<PCPart> parts = new ArrayList<>();
         //List<String> types = List.copyOf(requiredParts);
         Set<String> requiredParts = new HashSet<>();
-        BigDecimal price = BigDecimal.ZERO;
+        ConfiguredPC pc = new ConfiguredPC();
+        pc.setPrice(BigDecimal.ZERO);
 
-        for (String serialNumber : dto.getPartIds()) {
+        for (String serialNumber : dto.getPartSerialnumbers()) {
             Part p = partRepo.getEntityManager()
                     .createQuery("select p from Part p where p.serialNumber = :sn", Part.class)
                     .setParameter("sn", serialNumber)
@@ -61,21 +62,20 @@ public class PCServiceImpl implements PCService {
             pcPart.setAmount(1L);
             parts.add(pcPart);
 
-            price.add(p.getPrice().multiply(BigDecimal.valueOf(pcPart.getAmount())));
+
+            pc.setPrice(pc.getPrice().add(p.getPrice().multiply(BigDecimal.valueOf((pcPart.getAmount())))));
+            System.out.println(p.getPrice());
+            System.out.println(pcPart.getAmount());
         }
 
         if (requiredParts.size() != 7) {
             return null;
         }
 
-        ConfiguredPC pc = new ConfiguredPC();
         pc.setShouldBeBuilt(dto.isShouldBeBuilt());
-        //pc.setPcParts(parts);
-        pc.setPrice(price);
         pc.setWarrantyEnd(LocalDate.now().plusYears(1));
 
         pcRepo.persist(pc);
-        //pcRepo.getEntityManager().refresh(pc);
 
         parts.forEach(pcPart -> {
             pcPart.getId().setConfiguredPC(pc);
