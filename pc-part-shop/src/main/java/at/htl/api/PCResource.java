@@ -26,6 +26,12 @@ public class PCResource {
         return Response.ok(GlobalMapper.INSTANCE.listPrebuiltPCToDTO(pcService.getAllPrebuilt())).build();
     }
 
+    @Path("configured")
+    @GET
+    public Response getAllConfigured(){
+        return Response.ok(GlobalMapper.INSTANCE.listConfiguredPcToDTO(pcService.getAllConfigured())).build();
+    }
+
     @POST
     public Response configurePC(NewPCDTO dto){
         ConfiguredPC configuredPC =  pcService.configurePC(dto);

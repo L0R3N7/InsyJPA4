@@ -64,8 +64,6 @@ public class PCServiceImpl implements PCService {
 
 
             pc.setPrice(pc.getPrice().add(p.getPrice().multiply(BigDecimal.valueOf((pcPart.getAmount())))));
-            System.out.println(p.getPrice());
-            System.out.println(pcPart.getAmount());
         }
 
         if (requiredParts.size() != 7) {
@@ -83,5 +81,10 @@ public class PCServiceImpl implements PCService {
         });
 
         return pc;
+    }
+
+    @Override
+    public List<ConfiguredPC> getAllConfigured() {
+        return this.pcRepo.getAllConfigured();
     }
 }

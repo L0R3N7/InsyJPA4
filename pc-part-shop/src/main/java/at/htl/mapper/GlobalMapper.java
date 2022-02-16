@@ -26,4 +26,6 @@ public interface GlobalMapper {
     PSUDTO psuToDTO(PSU p);
     RAMDTO ramToDTO(RAM res);
     StorageDTO storageToDTO(Storage res);
+
+    List<ConfiguredPCDTO> listConfiguredPcToDTO(List<ConfiguredPC> allConfigured);
 }

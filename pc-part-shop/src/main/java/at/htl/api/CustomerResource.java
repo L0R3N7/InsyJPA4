@@ -50,6 +50,4 @@ public class CustomerResource {
         Customer result = this.customerService.getCustomerById(id);
         return ((result == null)? Response.status(404) : Response.ok(GlobalMapper.INSTANCE.customerToCustomerDTO(result))).build();
     }
-
-
 }
