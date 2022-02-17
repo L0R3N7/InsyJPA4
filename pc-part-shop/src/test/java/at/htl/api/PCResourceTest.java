@@ -37,7 +37,11 @@ class PCResourceTest {
                 .get(url+"/prebuilt")
                 .then()
                 .contentType(ContentType.JSON)
-                .statusCode(200);
+                .statusCode(200)
+                .body("[0].price", Matchers.is(500.0F))
+                .body("[0].model", Matchers.is("7TZ8-UI89-ZTWR"))
+                .body("[0].manufacturer", Matchers.is("ASUS"));
+
     }
 
     @Test
