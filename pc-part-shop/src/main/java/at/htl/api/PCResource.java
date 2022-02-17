@@ -19,6 +19,11 @@ public class PCResource {
         this.pcService = pcService;
     }
 
+    @GET
+    @Path("byCustomerId/{id}")
+    public Response getPcByCusomterId(@PathParam("id") Long id){
+        return Response.ok(GlobalMapper.INSTANCE.listPCToDTO(this.pcService.getPcByCusomterId(id))).build();
+    }
 
     @Path("prebuilt")
     @GET

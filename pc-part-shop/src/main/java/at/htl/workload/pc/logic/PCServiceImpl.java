@@ -3,10 +3,7 @@ package at.htl.workload.pc.logic;
 import at.htl.model.NewPCDTO;
 import at.htl.workload.parts.Part;
 import at.htl.workload.parts.logic.PartRepo;
-import at.htl.workload.pc.ConfiguredPC;
-import at.htl.workload.pc.PCPart;
-import at.htl.workload.pc.PCPartId;
-import at.htl.workload.pc.PrebuiltPC;
+import at.htl.workload.pc.*;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
@@ -86,5 +83,10 @@ public class PCServiceImpl implements PCService {
     @Override
     public List<ConfiguredPC> getAllConfigured() {
         return this.pcRepo.getAllConfigured();
+    }
+
+    @Override
+    public List<PC> getPcByCusomterId(Long id) {
+        return this.pcRepo.list("customer.id", id);
     }
 }

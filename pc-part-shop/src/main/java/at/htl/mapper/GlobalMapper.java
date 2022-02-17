@@ -4,6 +4,8 @@ import at.htl.model.*;
 import at.htl.workload.customer.Customer;
 import at.htl.workload.parts.*;
 import at.htl.workload.pc.ConfiguredPC;
+import at.htl.workload.pc.PC;
+import at.htl.workload.pc.PCDto;
 import at.htl.workload.pc.PrebuiltPC;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
@@ -28,4 +30,6 @@ public interface GlobalMapper {
     StorageDTO storageToDTO(Storage res);
 
     List<ConfiguredPCDTO> listConfiguredPcToDTO(List<ConfiguredPC> allConfigured);
+
+    List<PCDto> listPCToDTO(List<PC> l);
 }

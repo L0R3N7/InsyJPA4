@@ -2,6 +2,7 @@ package at.htl.workload.pc.logic;
 
 import at.htl.model.NewPCDTO;
 import at.htl.workload.pc.ConfiguredPC;
+import at.htl.workload.pc.PC;
 import at.htl.workload.pc.PrebuiltPC;
 
 import java.util.List;
@@ -12,4 +13,6 @@ public interface PCService {
     ConfiguredPC configurePC(NewPCDTO dto);
 
     List<ConfiguredPC> getAllConfigured();
+
+    List<PC> getPcByCusomterId(Long id);
 }
