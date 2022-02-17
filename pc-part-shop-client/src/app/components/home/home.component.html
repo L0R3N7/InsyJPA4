@@ -1,1 +1,61 @@
-<p>home works!</p>
+<mat-button-toggle (click)="this.listCustomer()">list Customer</mat-button-toggle>
+<mat-button-toggle (click)="this.listPrebuildPc()">list Prebuild PC</mat-button-toggle>
+<mat-button-toggle (click)="this.listOtherPc()">list configured PC</mat-button-toggle>
+
+<div id="customer" class="testkahabkeinenbockmehr">
+  <div class="header">
+    <h2 class="headerclass">Vorname:</h2>
+    <p class="contentclass" id="customervorname"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Nachname:</h2>
+    <p class="contentclass" id="customernachname"></p>
+  </div>
+
+  <div class="header">
+    <h2 class="headerclass">Id:</h2>
+    <p class="contentclass" id="customerid"></p>
+  </div>
+
+
+</div>
+
+<div id="prebuild" class="testkahabkeinenbockmehr">
+  <div class="header">
+    <h2 class="headerclass">Id:</h2>
+    <p class="contentclass" id="prebuildid"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Modell: </h2>
+    <p class="contentclass" id="prebuildmanufacturer"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Modellnummer: </h2>
+    <p class="contentclass" id="prebuildmodel"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Preis: </h2>
+    <p class="contentclass" id="prebuildprice"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Garantie: </h2>
+    <p class="contentclass" id="prebuildwarrantyEnd"></p>
+  </div>
+</div>
+
+<div id="configured" class="testkahabkeinenbockmehr">
+  <div class="header">
+    <h2 class="headerclass">Id: </h2>
+    <p class="contentclass" id="configuredid"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Preis:</h2>
+    <p class="contentclass" id="configuredprice"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Garantie: </h2>
+    <p class="contentclass" id="configuredwarrantyEnd"></p>
+  </div>
+</div>
+
+

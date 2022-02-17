@@ -1,0 +1,40 @@
+(click)="this.onclickedTsheckBox(part.key)" type="radio" id="price" name="price" value="Price">
+
+
+
+
+<form>
+        <ul *ngIf="part.value">
+          <div *ngFor="let article of part.value">
+
+
+            <mat-radio-button (click)="this.onclickedTsheckBox(part.key ,article['serialNumber'])" id="{{article['serialNumber']}}"></mat-radio-button>
+
+            {{article["name"]}}
+            ({{article["serialNumber"]}})
+            : {{article["price"]}}€
+
+          </div>
+        </ul>
+      </form>
+
+
+      vcustomer: item = {
+           "id": "",
+           "lasname": "",
+           "firstname": ""
+         };
+         configured: item = {
+           "id": "",
+           "price": "",
+           "shouldBeBuilt": "",
+           "warrantyEnd": ""
+         };
+
+         prebuilt: item = {
+           "id": "",
+           "manufacturer": "",
+           "model": "",
+           "price": "",
+           "warrantyEnd": ""
+         };

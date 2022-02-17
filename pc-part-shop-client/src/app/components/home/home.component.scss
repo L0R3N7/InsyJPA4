@@ -1,0 +1,35 @@
+.testkahabkeinenbockmehr{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+
+.headerclass{
+  text-align: left;
+  width: 1vw;
+
+}
+
+.header .mat-card-title{
+  text-align: right;
+
+}
+.contentclass{
+  text-align: right;
+  margin-right: 100vw;
+  color: green;
+
+
+
+}
+
+.header{
+
+  display: flex;
+  flex-direction: column;
+  width: 12vw;
+  margin-bottom: 10vw;
+
+}

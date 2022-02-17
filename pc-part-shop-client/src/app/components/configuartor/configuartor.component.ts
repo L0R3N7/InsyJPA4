@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {chekList} from "../../interfaces/interface";
+import {item} from "../../interfaces/interface";
+import {map} from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-configuartor',
@@ -9,49 +11,63 @@ import {chekList} from "../../interfaces/interface";
 })
 
 
-
 export class ConfiguartorComponent implements OnInit {
 
   public itemList: { [key: string]: { [key: string]: any }[] } = {};
-  // public chekList: [CPU: boolean, Case: boolean, GraphicsCard: boolean, Motherboard: boolean, PSU: boolean, RAM: boolean, Storage: boolean];
-  // public controls: { [key: string]: boolean };
 
-  obj: chekList = {
-    "CPU": true,
-    "Case": true,
-    "GraphicsCard": false,
-    "Motherboard": false,
-    "PSU": false,
-    "RAM": false,
-    "Storage": false
+  obj: item = {
+    "CPU": "",
+    "Case": "",
+    "GraphicsCard": "",
+    "Motherboard": "",
+    "PSU": "",
+    "RAM": "",
+    "Storage": ""
   };
+  //private next: any;
+  private errors: any;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
+    this.getPartList()
   }
 
-  onclickedTsheckBox(part: any) {
-    console.log(part)
-
-    //this.obj{part} = false
-
-    //this.obj("1").CPU = false;
-
-    //this.chekList[part] = true;
-
-    //onsole.log(this.chekList[part])
+  onclickedTsheckBox(key: any, part: any) {
+    this.obj[key] = part
   }
 
   getPartList() {
-
     this.http.get('http://localhost:8080/part')
       .subscribe((response: any) => {
         this.itemList = response;
-        console.log(response)
       });
+  }
 
-    //return this.itemList;
+  save() {
+    var parts: string[];
+    parts = [this.obj["CPU"], this.obj["Case"], this.obj["GraphicsCard"], this.obj["Motherboard"], this.obj["PSU"], this.obj["RAM"], this.obj["Storage"]]
+    console.log(parts)
+
+    this.http.post('http://localhost:8080/pc', {partSerialnumbers: parts, shouldBeBuilt: false}).subscribe(
+      result => {
+      },
+      error => {
+        this.errors = error;
+        document.getElementById("showresult")!.innerHTML = "<fieldset>\n" +
+          "    <div >\n" +
+          "<p>Error. Pls try again!</p>" +
+          "    </div>\n" +
+          "  </fieldset>"
+      },
+      () => {
+        document.getElementById("showresult")!.innerHTML = "<fieldset>\n" +
+          "    <div >\n" +
+          "<p>Succes!</p>" +
+          "    </div>\n" +
+          "  </fieldset>"
+      }
+    );
   }
 }

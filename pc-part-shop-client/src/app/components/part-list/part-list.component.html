@@ -1,28 +1,23 @@
-<p>part-list works!</p>
-
 <button (click)="this.getPartList()">Get Partlist</button>
 
-
-
+<script src="jquery-3.5.1.min.js"></script>
 <ul *ngIf="this.itemList != null ">
-
-
-  <li *ngFor="let part of this.itemList | keyvalue">
-    {{part.key}}
-    <ul *ngIf="part.value">
-      <li *ngFor="let article of part.value">
-        {{article["price"]}} €
-        {{article["name"]}}
-
-        {{article["serialNumber"]}}
-      </li>
-    </ul>
-  </li>
+  <div *ngFor="let part of this.itemList | keyvalue">
+    <fieldset>
+      {{part.key}}
+      <form>
+        <ul *ngIf="part.value">
+          <div (click)="this.onclickedTsheckBox(part.key ,article['serialNumber'])"
+               id="{{article['serialNumber']}}" *ngFor="let article of part.value">
+            <mat-button-toggle>
+              {{article["name"]}}
+              ({{article["serialNumber"]}})
+              : {{article["price"]}}€
+            </mat-button-toggle>
+          </div>
+        </ul>
+      </form>
+    </fieldset>
+  </div>
 </ul>
 
-
-
-
-
-
-<mat-slider min="1" max="100" step="1" value="50"></mat-slider>

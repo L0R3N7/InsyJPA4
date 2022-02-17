@@ -12,6 +12,11 @@ import {PartDetailsComponent} from './components/part-details/part-details.compo
 import {PartListComponent} from './components/part-list/part-list.component';
 import {OrdersComponent} from './components/orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatRadioModule} from "@angular/material/radio";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -30,7 +35,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSliderModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

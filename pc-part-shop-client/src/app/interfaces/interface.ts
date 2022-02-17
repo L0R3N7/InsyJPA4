@@ -1,3 +1,4 @@
-export interface chekList {
-  [key: string]: boolean;
+export interface item {
+  [key: string]: string;
+
 }
