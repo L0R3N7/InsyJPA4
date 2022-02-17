@@ -17,6 +17,8 @@ import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -30,18 +32,22 @@ import {MatCardModule} from "@angular/material/card";
     OrdersComponent
 
   ],
-  imports: [
-    BrowserModule,
-    MatSliderModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatRadioModule,
-    MatButtonToggleModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatCardModule
-  ],
+    imports: [
+        BrowserModule,
+        MatSliderModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatRadioModule,
+        MatButtonToggleModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatCardModule,
+        MatFormFieldModule,
+      MatFormFieldModule,
+      MatInputModule
+
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
