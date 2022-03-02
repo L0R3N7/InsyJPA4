@@ -33,23 +33,23 @@ import {FormsModule} from "@angular/forms";
     OrdersComponent
 
   ],
-    imports: [
-        BrowserModule,
-        MatSliderModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatRadioModule,
-        MatButtonToggleModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-      MatFormFieldModule,
-      MatInputModule,
-      FormsModule
+  imports: [
+    BrowserModule,
+    MatSliderModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
