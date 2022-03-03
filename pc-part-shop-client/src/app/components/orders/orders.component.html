@@ -1,15 +1,33 @@
-<p>orders works!</p>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Oder</title>
+</head>
+<body>
+  <section class="bg-light h-75">
+    <div class="container">
+      <p>orders works!</p>
 
 
-<mat-form-field>
-  <mat-label>UserId</mat-label>
-  <input matInput [(ngModel)]="userid" #ctrl="ngModel" />
-</mat-form-field>
-<mat-form-field>
-  <mat-label>PcID</mat-label>
-  <input matInput [(ngModel)]="pcid" #ctrl="ngModel" />
-</mat-form-field>
+      <mat-form-field>
+        <mat-label>UserId</mat-label>
+        <input matInput [(ngModel)]="userid" #ctrl="ngModel" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>PcID</mat-label>
+        <input matInput [(ngModel)]="pcid" #ctrl="ngModel" />
+      </mat-form-field>
 
 
 
-<mat-button-toggle (click)="this.buyPc()">Buy PC</mat-button-toggle>
+      <mat-button-toggle (click)="this.buyPc()">Buy PC</mat-button-toggle>
+
+    </div>
+  </section>
+
+</body>
+</html>
