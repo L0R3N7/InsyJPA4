@@ -1,6 +1,12 @@
 <mat-button-toggle (click)="this.listCustomer()">list Customer</mat-button-toggle>
 <mat-button-toggle (click)="this.listPrebuildPc()">list Prebuild PC</mat-button-toggle>
 <mat-button-toggle (click)="this.listOtherPc()">list configured PC</mat-button-toggle>
+<mat-button-toggle (click)="this.getPcbyId()">list configured PC</mat-button-toggle>
+
+<mat-form-field>
+  <mat-label>PcID</mat-label>
+  <input matInput [(ngModel)]="pcid" #ctrl="ngModel" />
+</mat-form-field>
 
 <div id="customer" class="testkahabkeinenbockmehr">
   <div class="header">
@@ -16,8 +22,6 @@
     <h2 class="headerclass">Id:</h2>
     <p class="contentclass" id="customerid"></p>
   </div>
-
-
 </div>
 
 <div id="prebuild" class="testkahabkeinenbockmehr">
@@ -58,4 +62,24 @@
   </div>
 </div>
 
+<div id="pcbyid" class="testkahabkeinenbockmehr">
+  <div class="header">
+    <h2 class="headerclass">ID:</h2>
+    <p class="contentclass" id="customeridpc"></p>
+  </div>
+  <div class="header">
+    <h2 class="headerclass">Price:</h2>
+    <p class="contentclass" id="customerpirceid"></p>
+  </div>
+
+  <div class="header">
+    <h2 class="headerclass">Warrenty end:</h2>
+    <p class="contentclass" id="customerwarrantyEnd"></p>
+  </div>
+
+  <div class="header">
+    <h2 class="headerclass">PCiD:</h2>
+    <p class="contentclass" id="customerpcid2"></p>
+  </div>
+</div>
 
