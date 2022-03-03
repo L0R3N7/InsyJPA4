@@ -1,10 +1,10 @@
-<mat-button-toggle (click)="this.listCustomer()">list Customer</mat-button-toggle>
-<mat-button-toggle (click)="this.listPrebuildPc()">list Prebuild PC</mat-button-toggle>
-<mat-button-toggle (click)="this.listOtherPc()">list configured PC</mat-button-toggle>
-<mat-button-toggle (click)="this.getPcbyId()">list configured PC</mat-button-toggle>
+<mat-button-toggle (click)="this.listCustomer()">List Customer</mat-button-toggle>
+<mat-button-toggle (click)="this.listPrebuildPc()">List Prebuild PC</mat-button-toggle>
+<mat-button-toggle (click)="this.listOtherPc()">List configured PC</mat-button-toggle>
+<mat-button-toggle (click)="this.getPcbyId()">Get Pc by Customer ID</mat-button-toggle>
 
 <mat-form-field>
-  <mat-label>PcID</mat-label>
+  <mat-label>Customer Id</mat-label>
   <input matInput [(ngModel)]="pcid" #ctrl="ngModel" />
 </mat-form-field>
 
