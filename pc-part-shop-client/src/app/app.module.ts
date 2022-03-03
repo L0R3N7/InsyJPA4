@@ -20,6 +20,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -33,23 +34,24 @@ import {FormsModule} from "@angular/forms";
     OrdersComponent
 
   ],
-    imports: [
-        BrowserModule,
-        MatSliderModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatRadioModule,
-        MatButtonToggleModule,
-        MatDialogModule,
-        MatButtonModule,
-        MatCardModule,
-        MatFormFieldModule,
-      MatFormFieldModule,
-      MatInputModule,
-      FormsModule
+  imports: [
+    BrowserModule,
+    MatSliderModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatRadioModule,
+    MatButtonToggleModule,
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    NgbModule
 
-    ],
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

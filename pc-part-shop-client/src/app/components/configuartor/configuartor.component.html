@@ -1,42 +1,48 @@
-<p>configuartor works!</p>
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Configurator</title>
+</head>
+<body>
+<section class="bg-light h-100 ">
+  <div class="container bg-light w-100">
+    <div class="align-content-center">
 
-<button (click)="this.getPartList()">Get Parts</button>
+    <ul  *ngIf="this.itemList != null ">
+      <div *ngFor="let part of this.itemList | keyvalue">
+        <fieldset>
+          <div class="text-primary">{{part.key}}</div>
+          <form>
+            <ul *ngIf="part.value">
+              <form *ngFor="let article of part.value">
 
-
-<ul *ngIf="this.itemList != null ">
-  <div *ngFor="let part of this.itemList | keyvalue">
-    <fieldset>
-      {{part.key}}
-      <form>
-        <ul *ngIf="part.value">
-          <form *ngFor="let article of part.value">
-
-            <mat-radio-button (click)="this.onclickedTsheckBox(part.key ,article['serialNumber'])"
-                              id="{{article['serialNumber']}}"></mat-radio-button>
-            {{article["name"]}}
-            ({{article["serialNumber"]}})
-            : {{article["price"]}}€
+                <mat-radio-button (click)="this.onclickedTsheckBox(part.key ,article['serialNumber'])"
+                                  id="{{article['serialNumber']}}"></mat-radio-button>
+                {{article["name"]}}
+                ({{article["serialNumber"]}})
+                : {{article["price"]}}€
+              </form>
+            </ul>
           </form>
-        </ul>
-      </form>
-    </fieldset>
+        </fieldset>
+
+      </div>
+    </ul>
+    </div>
+    <mat-button-toggle (click)="this.save()">
+      Save
+    </mat-button-toggle>
+    <div id="showresult">
+    </div>
+
+
 
   </div>
-</ul>
-<mat-button-toggle (click)="this.save()">
-  Save
-</mat-button-toggle>
-<div id="showresult">
-</div>
+</section>
 
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>
